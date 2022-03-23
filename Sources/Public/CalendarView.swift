@@ -82,6 +82,8 @@ public final class CalendarView: UIView {
 
   /// A closure (that is retained) that is invoked inside `scrollViewDidScroll(_:)`
   public var didScroll: ((_ visibleDayRange: DayRange, _ isUserDragging: Bool) -> Void)?
+    
+  public var headerBackgroundColor: UIColor?
 
   /// A closure (that is retained) that is invoked inside `scrollViewDidEndDragging(_: willDecelerate:)`.
   @available(
@@ -489,7 +491,9 @@ public final class CalendarView: UIView {
         layoutMargins: directionalLayoutMargins,
         scale: scale,
         monthHeaderHeight: monthHeaderHeight(),
-        backgroundColor: backgroundColor)
+        backgroundColor: backgroundColor,
+        headerBackgroundColor: headerBackgroundColor
+      )
       _visibleItemsProvider = visibleItemsProvider
       return visibleItemsProvider
     }
