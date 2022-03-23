@@ -35,7 +35,7 @@ final class VisibleItemsProvider {
   {
     self.content = content
     self.backgroundColor = backgroundColor
-    self.headerBackgroundColor = backgroundColor
+    self.headerBackgroundColor = headerBackgroundColor
 
     layoutItemTypeEnumerator = LayoutItemTypeEnumerator(
       calendar: calendar,
