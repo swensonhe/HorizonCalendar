@@ -84,6 +84,10 @@ public final class CalendarView: UIView {
   public var didScroll: ((_ visibleDayRange: DayRange, _ isUserDragging: Bool) -> Void)?
     
   public var headerBackgroundColor: UIColor?
+    
+  public var daySize: CGSize {
+      return _visibleItemsProvider?.frameProvider.daySize ?? .zero
+  }
 
   /// A closure (that is retained) that is invoked inside `scrollViewDidEndDragging(_: willDecelerate:)`.
   @available(

@@ -333,7 +333,7 @@ final class VisibleItemsProvider {
   // MARK: Private
 
   private let layoutItemTypeEnumerator: LayoutItemTypeEnumerator
-  private let frameProvider: FrameProvider
+  let frameProvider: FrameProvider
 
   private var previousCalendarItemModelCache: [
     VisibleCalendarItem.ItemType: InternalAnyCalendarItemModel
