@@ -84,10 +84,6 @@ public final class CalendarView: UIView {
   public var didScroll: ((_ visibleDayRange: DayRange, _ isUserDragging: Bool) -> Void)?
     
   public var headerBackgroundColor: UIColor?
-    
-  public var daySize: CGSize {
-      return _visibleItemsProvider?.frameProvider.daySize ?? .zero
-  }
 
   /// A closure (that is retained) that is invoked inside `scrollViewDidEndDragging(_: willDecelerate:)`.
   @available(
@@ -102,6 +98,8 @@ public final class CalendarView: UIView {
 
   /// A closure (that is retained) that is invoked inside `scrollViewDidEndDecelerating(_:)`.
   public var didEndDecelerating: ((_ visibleDayRange: DayRange) -> Void)?
+    
+  public var didUpdateSize: ((_ size: CGSize) -> Void)?
 
   /// Whether or not the calendar's scroll view is currently over-scrolling, i.e, whether the rubber-banding or bouncing effect is in
   /// progress.
@@ -396,7 +394,11 @@ public final class CalendarView: UIView {
   private var previousPageIndex: Int?
 
   private var anchorLayoutItem: LayoutItem?
-  private var _visibleItemsProvider: VisibleItemsProvider?
+    private var _visibleItemsProvider: VisibleItemsProvider? {
+        didSet {
+            didUpdateSize?(_visibleItemsProvider?.frameProvider.daySize ?? .zero)
+        }
+    }
   private var visibleItemsDetails: VisibleItemsDetails?
   private var visibleViewsForVisibleItems = [VisibleCalendarItem: ItemView]()
 
