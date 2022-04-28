@@ -227,7 +227,7 @@ final class FrameProvider {
     CGRect(
       x: 0,
       y: layoutMargins.top + yContentOffset,
-      width: monthWidth - layoutMargins.leading - layoutMargins.trailing,
+      width: monthWidth + layoutMargins.leading + layoutMargins.trailing,
       height: daySize.height)
   }
 
