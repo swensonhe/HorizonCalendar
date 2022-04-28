@@ -225,9 +225,9 @@ final class FrameProvider {
 
   func frameOfPinnedDaysOfWeekRowBackground(yContentOffset: CGFloat) -> CGRect {
     CGRect(
-      x: layoutMargins.leading,
+      x: 0,
       y: layoutMargins.top + yContentOffset,
-      width: monthWidth,
+      width: monthWidth - layoutMargins.leading - layoutMargins.trailing,
       height: daySize.height)
   }
 
