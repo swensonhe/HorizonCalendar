@@ -24,7 +24,7 @@ import CoreGraphics
 /// type, we avoid `VisibleCalendarItem` `initializeWithCopy` when mutating the `Set`s. This type also caches its hash
 /// value, which otherwise would be recomputed for every `Set` operation performed by the reuse manager. On an iPhone 6s, this
 /// reduces CPU usage by nearly 10% when programmatically scrolling down at a rate of 500 points / frame.
-final class VisibleCalendarItem {
+public final class VisibleCalendarItem {
 
   // MARK: Lifecycle
 
@@ -41,8 +41,8 @@ final class VisibleCalendarItem {
 
   // MARK: Internal
 
-  public let calendarItemModel: InternalAnyCalendarItemModel
-  public let itemType: ItemType
+  let calendarItemModel: InternalAnyCalendarItemModel
+  let itemType: ItemType
   public let frame: CGRect
 
   // MARK: Private
@@ -57,7 +57,7 @@ final class VisibleCalendarItem {
 
 extension VisibleCalendarItem: Equatable {
 
-  static func == (lhs: VisibleCalendarItem, rhs: VisibleCalendarItem) -> Bool {
+  public static func == (lhs: VisibleCalendarItem, rhs: VisibleCalendarItem) -> Bool {
     lhs.calendarItemModel.itemViewDifferentiator == rhs.calendarItemModel.itemViewDifferentiator &&
       lhs.itemType == rhs.itemType
   }
@@ -68,7 +68,7 @@ extension VisibleCalendarItem: Equatable {
 
 extension VisibleCalendarItem: Hashable {
 
-  func hash(into hasher: inout Hasher) {
+  public func hash(into hasher: inout Hasher) {
     hasher.combine(cachedHashValue)
   }
 

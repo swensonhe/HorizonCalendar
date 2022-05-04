@@ -607,7 +607,6 @@ public final class CalendarView: UIView {
     withVisibleItems visibleItems: Set<VisibleCalendarItem>,
     previouslyVisibleItems: Set<VisibleCalendarItem>)
   {
-      visibleItemsProvider.frameProvider.frameOfDay
     var visibleItemsWithViewsToRemove = previouslyVisibleItems
     let previousVisibleViewsForVisibleItems = visibleViewsForVisibleItems
 

@@ -16,7 +16,7 @@
 import UIKit
 
 /// The container view for every visual item that can be displayed in the calendar.
-final class ItemView: UIView {
+public final class ItemView: UIView {
 
   // MARK: Lifecycle
 
@@ -58,17 +58,17 @@ final class ItemView: UIView {
     }
   }
 
-  override class var layerClass: AnyClass {
+  override public class var layerClass: AnyClass {
     CATransformLayer.self
   }
 
-  override func layoutSubviews() {
+  override public func layoutSubviews() {
     super.layoutSubviews()
 
     contentView.frame = bounds
   }
 
-  override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+  override public func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
     super.touchesEnded(touches, with: event)
 
     if touches.first.map(isTouchInView(_:)) ?? false {
@@ -92,7 +92,7 @@ final class ItemView: UIView {
 
 extension ItemView {
 
-  override var isAccessibilityElement: Bool {
+  override public var isAccessibilityElement: Bool {
     get { false }
     set { }
   }
