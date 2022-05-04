@@ -394,7 +394,7 @@ public final class CalendarView: UIView {
   private var anchorLayoutItem: LayoutItem?
   private var _visibleItemsProvider: VisibleItemsProvider?
   public private(set) var visibleItemsDetails: VisibleItemsDetails?
-  private var visibleViewsForVisibleItems = [VisibleCalendarItem: ItemView]()
+  public private(set) var visibleViewsForVisibleItems = [VisibleCalendarItem: ItemView]()
 
   private var previousBounds = CGRect.zero
   private var previousLayoutMargins = UIEdgeInsets.zero
@@ -607,6 +607,7 @@ public final class CalendarView: UIView {
     withVisibleItems visibleItems: Set<VisibleCalendarItem>,
     previouslyVisibleItems: Set<VisibleCalendarItem>)
   {
+      visibleItemsProvider.frameProvider.frameOfDay
     var visibleItemsWithViewsToRemove = previouslyVisibleItems
     let previousVisibleViewsForVisibleItems = visibleViewsForVisibleItems
 

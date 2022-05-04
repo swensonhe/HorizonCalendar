@@ -41,9 +41,9 @@ final class VisibleCalendarItem {
 
   // MARK: Internal
 
-  let calendarItemModel: InternalAnyCalendarItemModel
-  let itemType: ItemType
-  let frame: CGRect
+  public let calendarItemModel: InternalAnyCalendarItemModel
+  public let itemType: ItemType
+  public let frame: CGRect
 
   // MARK: Private
 

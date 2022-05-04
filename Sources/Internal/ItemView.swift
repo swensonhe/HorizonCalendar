@@ -38,7 +38,7 @@ final class ItemView: UIView {
 
   // MARK: Internal
 
-  let contentView: UIView
+  public let contentView: UIView
 
   var selectionHandler: (() -> Void)?
 
