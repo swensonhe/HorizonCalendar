@@ -42,7 +42,7 @@ public final class VisibleCalendarItem {
   // MARK: Internal
 
   let calendarItemModel: InternalAnyCalendarItemModel
-  let itemType: ItemType
+  public let itemType: ItemType
   public let frame: CGRect
 
   // MARK: Private
@@ -78,7 +78,7 @@ extension VisibleCalendarItem: Hashable {
 
 extension VisibleCalendarItem {
 
-  enum ItemType: Equatable, Hashable {
+  public enum ItemType: Equatable, Hashable {
     case layoutItemType(LayoutItem.ItemType)
     case pinnedDayOfWeek(DayOfWeekPosition)
     case pinnedDaysOfWeekRowBackground

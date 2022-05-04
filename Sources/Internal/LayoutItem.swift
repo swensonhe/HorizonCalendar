@@ -18,16 +18,16 @@ import CoreGraphics
 // MARK: - LayoutItem
 
 /// Represents an item that's used to build the base layout of the calendar.
-struct LayoutItem {
-  let itemType: ItemType
-  let frame: CGRect
+public struct LayoutItem {
+  public let itemType: ItemType
+  public let frame: CGRect
 }
 
 // MARK: - LayoutItem.ItemType
 
 extension LayoutItem {
 
-  enum ItemType: Equatable, Hashable {
+  public enum ItemType: Equatable, Hashable {
 
     case monthHeader(Month)
     case dayOfWeekInMonth(position: DayOfWeekPosition, month: Month)
@@ -49,7 +49,7 @@ extension LayoutItem {
 
 extension LayoutItem.ItemType: Comparable {
 
-  static func < (lhs: LayoutItem.ItemType, rhs: LayoutItem.ItemType) -> Bool {
+  public static func < (lhs: LayoutItem.ItemType, rhs: LayoutItem.ItemType) -> Bool {
     switch (lhs, rhs) {
     case let (.monthHeader(lhsMonth), .monthHeader(rhsMonth)):
       return lhsMonth < rhsMonth
