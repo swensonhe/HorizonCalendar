@@ -1020,8 +1020,8 @@ public struct VisibleItemsDetails {
   let centermostLayoutItem: LayoutItem
   let visibleDayRange: DayRange?
   let visibleMonthRange: MonthRange?
-  let framesForVisibleMonths: [Month: CGRect]
-  let framesForVisibleDays: [Day: CGRect]
+  public let framesForVisibleMonths: [Month: CGRect]
+  public let framesForVisibleDays: [Day: CGRect]
   let contentStartBoundary: CGFloat?
   let contentEndBoundary: CGFloat?
   let heightOfPinnedContent: CGFloat
