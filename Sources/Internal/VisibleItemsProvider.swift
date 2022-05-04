@@ -1015,7 +1015,7 @@ final class VisibleItemsProvider {
 
 // MARK: - VisibleItemsDetails
 
-struct VisibleItemsDetails {
+public struct VisibleItemsDetails {
   let visibleItems: Set<VisibleCalendarItem>
   let centermostLayoutItem: LayoutItem
   let visibleDayRange: DayRange?
