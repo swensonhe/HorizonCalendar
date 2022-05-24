@@ -143,6 +143,10 @@ public final class CalendarView: UIView {
         trailing: max(newValue.trailing, 0))
     }
   }
+    
+    public var contentOffset: CGPoint {
+        return scrollView.contentOffset
+    }
 
   public override func didMoveToWindow() {
     super.didMoveToWindow()
@@ -272,6 +276,10 @@ public final class CalendarView: UIView {
 
     setNeedsLayout()
   }
+    
+    public func setContentOffset(_ contentOffset: CGPoint, animated: Bool) {
+        scrollView.setContentOffset(contentOffset, animated: animated)
+    }
 
   /// Returns the accessibility element associated with the specified visible date. If the date is not currently visible, then there will be no
   /// associated accessibility element and this function will return `nil`.
